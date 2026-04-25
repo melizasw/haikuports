@@ -1,0 +1,187 @@
+SUMMARY="A modern high performance safe general-purpose programming language"
+DESCRIPTION="Swift is a general-purpose programming language built using a \
+modern approach to safety, performance, and software design patterns. \
+The goal of the Swift project is to create the best available \
+language for uses ranging from systems programming to mobile \
+and desktop apps, scaling up to cloud services. Most importantly, \
+Swift  is designed to make writing and maintaining correct programs \
+easier for the developer."
+HOMEPAGE="https://swift.org"
+COPYRIGHT="2014-2023 Apple Inc"
+LICENSE="Apache v2"
+REVISION="1"
+
+SWIFTTAG="5.8.1"
+YAMS_VERSION="5.0.1"
+SWIFT_ARGUMENT_PARSER_VERSION="1.0.3"
+SWIFT_CRYPTO_VERSION="2.2.3"
+SWIFT_ATOMICS_VERSION="1.0.2"
+SWIFT_COLLECTIONS_VERSION="1.0.1"
+SWIFT_NUMERICS_VERSION="1.0.1"
+SWIFT_SYSTEM_VERSION="1.1.1"
+SWIFT_NIO_VERSION="2.31.2"
+SWIFT_NIO_SSL_VERSION="2.15.0"
+SWIFT_FORMAT_VERSION="0.50700.1"
+
+
+SOURCE_URI="https://github.com/swiftlang/swift/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256="f65381a9dfea4579323e5aff04d4224f2d8f505fcc6e3e83022e734d4f54575f"
+SOURCE_DIR="swift-swift-$SWIFTTAG-RELEASE"
+SOURCE_URI_2="https://github.com/apple/swift-corelibs-libdispatch/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_2="ec27aabf9b0500ad2abcc53b8902a7673d9871106097851ce226e2aa817d1b0e"
+SOURCE_DIR_2="swift-corelibs-libdispatch-swift-$SWIFTTAG-RELEASE"
+
+
+#PATCHES="swift_lang-$portVersion.patchset"
+#PATCHES_2="swift_clang-$portVersion.patchset"
+#PATCHES_3="swift_llvm-$portVersion.patchset"
+
+ARCHITECTURES="x86_64 ?arm64"
+SECONDARY_ARCHITECTURES="!x86"
+
+PROVIDES="
+	swift_lang$secondaryArchSuffix = $portVersion
+	cmd:lldb_moduleimport_test$secondaryArchSuffix = $portVersion
+	cmd:sil_func_extractor$secondaryArchSuffix = $portVersion
+	cmd:sil_llvm_gen$secondaryArchSuffix = $portVersion
+	cmd:sil_nm$secondaryArchSuffix = $portVersion
+	cmd:sil_opt$secondaryArchSuffix = $portVersion
+	cmd:sil_passpipeline_dumper$secondaryArchSuffix = $portVersion
+	cmd:swift$secondaryArchSuffix = $portVersion
+	cmd:swift_api_digester$secondaryArchSuffix = $portVersion
+	cmd:swift_api_dump.py$secondaryArchSuffix = $portVersion
+	cmd:swift_autolink_extract$secondaryArchSuffix = $portVersion
+	cmd:swift_demangle$secondaryArchSuffix = $portVersion
+	cmd:swift_format$secondaryArchSuffix = $portVersion
+	cmd:swift_ide_test$secondaryArchSuffix = $portVersion
+	cmd:swift_llvm_opt$secondaryArchSuffix = $portVersion
+	cmd:swift_refactor$secondaryArchSuffix = $portVersion
+	cmd:swift_reflection_dump$secondaryArchSuffix = $portVersion
+	cmd:swift_reflection_test_haiku_x86_64$secondaryArchSuffix = $portVersion
+	cmd:swift_remoteast_test$secondaryArchSuffix = $portVersion
+	cmd:swift_syntax_test$secondaryArchSuffix = $portVersion
+	cmd:swiftc$secondaryArchSuffix = $portVersion
+	"
+REQUIRES="
+	haiku$secondaryArchSuffix
+	llvm$secondaryArchSuffix >= 5.0.0
+	lib:libatomic$secondaryArchSuffix
+	lib:libcharset$secondaryArchSuffix
+	lib:libedit$secondaryArchSuffix
+	lib:libexecinfo$secondaryArchSuffix
+	lib:libiconv$secondaryArchSuffix
+	lib:libicudata$secondaryArchSuffix
+	lib:libicui18n$secondaryArchSuffix
+	lib:libicuuc$secondaryArchSuffix
+	lib:libncurses$secondaryArchSuffix
+	lib:libsqlite3$secondaryArchSuffix
+	lib:libuuid$secondaryArchSuffix
+	lib:libxml2$secondaryArchSuffix
+	lib:libz$secondaryArchSuffix
+	"
+
+BUILD_REQUIRES="
+	haiku${secondaryArchSuffix}_devel
+	gcc_syslibs$secondaryArchSuffix_devel
+	devel:libcharset$secondaryArchSuffix
+	devel:libedit$secondaryArchSuffix
+	devel:libexecinfo$secondaryArchSuffix
+	devel:libgcc$secondaryArchSuffix
+	devel:libiconv$secondaryArchSuffix
+	devel:libicudata$secondaryArchSuffix
+	devel:libicui18n$secondaryArchSuffix
+	devel:libicuuc$secondaryArchSuffix
+	devel:libncurses$secondaryArchSuffix
+	devel:libsqlite3$secondaryArchSuffix
+	devel:libuuid$secondaryArchSuffix
+	devel:libxml2$secondaryArchSuffix
+	"
+BUILD_PREREQUIRES="
+	cmd:clang$secondaryArchSuffix
+	cmd:clang++$secondaryArchSuffix
+	cmd:cmake
+	cmd:diff
+	cmd:find
+	cmd:gcc$secondaryArchSuffix
+	cmd:grep
+	cmd:groff
+	cmd:ld$secondaryArchSuffix
+	cmd:libtool$secondaryArchSuffix
+	cmd:make
+	cmd:pkg_config$secondaryArchSuffix
+	cmd:sed
+	cmd:swig
+	cmd:which
+	"
+
+BUILD()
+{
+	cd ..
+
+	mkdir -p swift swift-corelibs-foundation clang llvm cmark compiler-rt
+
+	# Copy all the source files
+	cp -rd $sourceDir/* swift
+	cp -rd $sourceDir2/* swift-corelibs-foundation
+	
+#	cp -rd $sourceDir2/* clang
+#	cp -rd $sourceDir3/* llvm
+#	cp -rd $sourceDir4/* cmark
+#	cp -rd $sourceDir5/* compiler-rt
+
+	# Fix permisssions for build-script.
+	chmod +x ./swift/utils/build-script ./swift/utils/build-script-impl
+	chmod -R 755 ./swift/utils
+
+	export HOST_CC="/bin/clang"
+	export HOST_CXX="/bin/clang++"
+
+	# Build faster by building only for X86
+	python3 ./swift/utils/build-script -R -m \
+		--extra-cmake-options='-DLLVM_ENABLE_ASSERTIONS=TRUE \
+			-DCMAKE_SKIP_RPATH=FALSE -DLLVM_ENABLE_RTTI=ON \
+			-DLLVM_TARGETS_TO_BUILD=X86 -DLLVM_ENABLE_THREADS=YES \
+			-DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC' \
+		--stdlib-deployment-targets=haiku-x86_64 $jobArgs
+}
+
+INSTALL()
+{
+	mkdir -p $binDir $libDir/swift $libDir/swift/shims \
+		$libDir/swift/haiku/x86_64 $libDir/swift/clang/include
+
+	cd ../build/Unix_Makefiles-ReleaseAssert/swift-haiku-x86_64
+
+	# Copy the executables into the binDir.
+	cp ./bin/* $binDir
+	cd ./lib/swift/
+
+	# Symlink and copy the clang headers.
+	ln -sfn ../../../llvm-haiku-x86_64/lib/clang/5.0.0/include/ clang
+	cp -R ./clang/* $libDir/swift/clang/include
+	cp -R ./shims/* $libDir/swift/shims
+
+	# Copy the specific library files.
+	cp ./haiku/libswiftCore.so $libDir/swift/haiku
+	cp ./haiku/libswiftGlibc.so $libDir/swift/haiku
+	cp ./haiku/libswiftRemoteMirror.so $libDir/swift/haiku
+	cp ./haiku/libswiftSwiftOnoneSupport.so $libDir/swift/haiku
+
+	# Copy the essential swiftmodule files.
+	cp ./haiku/x86_64/SwiftOnoneSupport.swiftmodule $libDir/swift/haiku/x86_64
+	cp ./haiku/x86_64/Glibc.swiftmodule $libDir/swift/haiku/x86_64
+	cp ./haiku/x86_64/Swift.swiftmodule $libDir/swift/haiku/x86_64
+
+	# Copy the essential swiftdoc files.
+	cp ./haiku/x86_64/SwiftOnoneSupport.swiftdoc $libDir/swift/haiku/x86_64
+	cp ./haiku/x86_64/Glibc.swiftdoc $libDir/swift/haiku/x86_64
+	cp ./haiku/x86_64/Swift.swiftdoc $libDir/swift/haiku/x86_64
+	cp ./haiku/x86_64/glibc.modulemap  $libDir/swift/haiku/x86_64
+	cp ./haiku/x86_64/swift_begin.o  $libDir/swift/haiku/x86_64
+	cp ./haiku/x86_64/swift_end.o   $libDir/swift/haiku/x86_64
+}
+
+TEST()
+{
+	python3 utils/build-script -R -t
+}

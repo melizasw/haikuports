@@ -27,10 +27,162 @@ SWIFT_FORMAT_VERSION="0.50700.1"
 SOURCE_URI="https://github.com/swiftlang/swift/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
 CHECKSUM_SHA256="f65381a9dfea4579323e5aff04d4224f2d8f505fcc6e3e83022e734d4f54575f"
 SOURCE_DIR="swift-swift-$SWIFTTAG-RELEASE"
-SOURCE_URI_2="https://github.com/apple/swift-corelibs-libdispatch/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+SOURCE_FILENAME="swift.tar.gz"
+
+SOURCE_URI_2="https://github.com/swiftlang/swift-corelibs-libdispatch/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
 CHECKSUM_SHA256_2="ec27aabf9b0500ad2abcc53b8902a7673d9871106097851ce226e2aa817d1b0e"
 SOURCE_DIR_2="swift-corelibs-libdispatch-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_2="swift-corelibs-libdispatch.tar.gz"
 
+SOURCE_URI_3="https://github.com/swiftlang/swift-corelibs-foundation/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_3="b71505ae557a15481c05bbfaaeee83047e109c285ce4c4c7e06ba79b1aea3f2c"
+SOURCE_DIR_3="swift-corelibs-foundation-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_3="swift-corelibs-foundation.tar.gz"
+
+SOURCE_URI_4="https://github.com/swiftlang/swift-integration-tests/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_4="809dee53d308fc3d714f9837c38b21afafe87b0129022fa0fa776f3782bd1b2f"
+SOURCE_DIR_4="swift-integration-tests-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_4="swift-integration-tests.tar.gz"
+
+SOURCE_URI_5="https://github.com/swiftlang/swift-corelibs-xctest/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_5="194180362ba8a18f60f4cc371ada705be2a51d317364055b17024bf9ae405e26"
+SOURCE_DIR_5="swift-corelibs-xctest-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_5="swift-corelibs-xctest.tar.gz"
+
+SOURCE_URI_6="https://github.com/swiftlang/swift-package-manager/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_6="51967163d971aac66f9667d2a9387da3c25b70118bc1e82cef309759f7b1d272"
+SOURCE_DIR_6="swift-package-manager-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_6="swift-package-manager.tar.gz"
+
+SOURCE_URI_7="https://github.com/swiftlang/swift-llbuild/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_7="2df6fa3d92a351df97f228148405462e3aebcd4f0077b17e0ee5f5514575aa68"
+SOURCE_DIR_7="swift-llbuild-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_7="swift-llbuild.tar.gz"
+
+SOURCE_URI_8="https://github.com/swiftlang/swift-cmark/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_8="89ad876b686192b806c61b390b076cf3cbb6459af6acdd3e93cd1e3d8a74c7f6"
+SOURCE_DIR_8="swift-cmark-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_8="swift-cmark.tar.gz"
+
+SOURCE_URI_9="https://github.com/apple/swift-xcode-playground-support/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_9="39f8862c8e3a57ad036df4efb0eef92cbd8f68bf9191c973535b2399c312a772"
+SOURCE_DIR_9="swift-xcode-playground-support-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_9="swift-xcode-playground-support.tar.gz"
+
+SOURCE_URI_10="https://github.com/swiftlang/sourcekit-lsp/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_10="abc341ac3e05c01fe93949cdd72ee9aefc3b785a9f91ead32169764a1af6625e"
+SOURCE_DIR_10="sourcekit-lsp-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_10="sourcekit-lsp.tar.gz"
+
+SOURCE_URI_11="https://github.com/swiftlang/indexstore-db/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_11="d9ff209be9a43109a80f1b2948fd34f203e1d55a944b1a2ea34439a75e218dc1"
+SOURCE_DIR_11="indexstore-db-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_11="indexstore-db.tar.gz"
+
+SOURCE_URI_12="https://github.com/swiftlang/llvm-project/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_12="f4b6a4b1589d48fa2295d2709b99d1bfbbc6bfb2778dc72a4d72da3c25ff5d92"
+SOURCE_DIR_12="llvm-project-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_12="llvm-project.tar.gz"
+
+SOURCE_URI_13="https://github.com/swiftlang/swift-tools-support-core/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_13="914c697ded28be930f5afc844bc5712d2f47c14c83fae945ecca0f49af200f70"
+SOURCE_DIR_13="swift-tools-support-core-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_13="swift-tools-support-core.tar.gz"
+
+SOURCE_URI_14="https://github.com/apple/swift-argument-parser/archive/refs/tags/$SWIFT_ARGUMENT_PARSER_VERSION.tar.gz"
+CHECKSUM_SHA256_14="a4d4c08cf280615fe6e00752ef60e28e76f07c25eb4706a9269bf38135cd9c3f"
+SOURCE_DIR_14="swift-argument-parser-$SWIFT_ARGUMENT_PARSER_VERSION"
+SOURCE_FILENAME_14="swift-argument-parser.tar.gz"
+
+SOURCE_URI_15="https://github.com/swiftlang/swift-driver/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_15="576ba0b330f2dc1fde6979dcecfccbb13c43d76b118bc8b43ecef9e62332df84"
+SOURCE_DIR_15="swift-driver-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_15="swift-driver.tar.gz"
+
+SOURCE_URI_16="https://github.com/swiftlang/swift-syntax/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_16="5885ad4e0ac448c6d4be85b17c5dd28e825aedf3664cf1b928017fb81938f52a"
+SOURCE_DIR_16="swift-syntax-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_16="swift-syntax.tar.gz"
+
+SOURCE_URI_17="https://github.com/jpsim/Yams/archive/$YAMS_VERSION.tar.gz"
+CHECKSUM_SHA256_17="ec1ad699c30f0db45520006c63a88cc1c946a7d7b36dff32a96460388c0a4af2"
+SOURCE_DIR_17="Yams-$YAMS_VERSION"
+SOURCE_FILENAME_17="yams.tar.gz"
+
+SOURCE_URI_18="https://github.com/apple/swift-crypto/archive/refs/tags/$SWIFT_CRYPTO_VERSION.tar.gz"
+CHECKSUM_SHA256_18="84cec042505e1c5bf3dd14a1bb18d0c06c5a9435b7b10a69709101b602285ff5"
+SOURCE_DIR_18="swift-crypto-$SWIFT_CRYPTO_VERSION"
+SOURCE_FILENAME_18="swift-crypto.tar.gz"
+
+SOURCE_URI_19="https://github.com/apple/swift-atomics/archive/refs/tags/$SWIFT_ATOMICS_VERSION.zip"
+CHECKSUM_SHA256_19="0688798d00771b0e5cfa7b0adaa5fa7b5aee28459b8f4b42d37e1cf91785a01c"
+SOURCE_DIR_19="swift-atomics-$SWIFT_ATOMICS_VERSION"
+SOURCE_FILENAME_19="swift-atomics.zip"
+
+SOURCE_URI_20="https://github.com/swiftlang/swift-stress-tester/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_20="35ef962326ef0a076d87d33d4002712846af58f6e2c0bb558b4b11fc4639b31f"
+SOURCE_DIR_20="swift-stress-tester-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_20="swift-stress-tester.tar.gz"
+
+SOURCE_URI_21="https://github.com/apple/swift-collections/archive/refs/tags/$SWIFT_COLLECTIONS_VERSION.zip"
+CHECKSUM_SHA256_21="5a40baf79a942bf06a9448ce2eea3eed1b9b6e05185014e89477a1f8757e22d7"
+SOURCE_DIR_21="swift-collections-$SWIFT_COLLECTIONS_VERSION"
+SOURCE_FILENAME_21="swift-collections.zip"
+
+SOURCE_URI_22="https://github.com/apple/swift-numerics/archive/refs/tags/$SWIFT_NUMERICS_VERSION.zip"
+CHECKSUM_SHA256_22="57e11dc2b06d03bdce156710e35b7713699ec3e965e8fde496b6c97dbe32a41c"
+SOURCE_DIR_22="swift-numerics-$SWIFT_NUMERICS_VERSION"
+SOURCE_FILENAME_22="swift-numerics.zip"
+
+SOURCE_URI_23="https://github.com/apple/swift-system/archive/refs/tags/$SWIFT_SYSTEM_VERSION.zip"
+CHECKSUM_SHA256_23="5c24088dbc840ce00df9016199a9f5978f17c8677220e39621bbb303a6a481bd"
+SOURCE_DIR_23="swift-system-$SWIFT_SYSTEM_VERSION"
+SOURCE_FILENAME_23="swift-system.zip"
+
+SOURCE_URI_24="https://github.com/swiftlang/swift-docc/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_24="95ba75c40eaa3571250f7f0769b6784a50a3a45796be9c71362635f88a5d09b7"
+SOURCE_DIR_24="swift-docc-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_24="swift-docc.tar.gz"
+
+SOURCE_URI_25="https://github.com/swiftlang/swift-lmdb/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_25="75d7760749e9d7a263aa428ef5867026a07f6baf290e190f440115a4faf55e56"
+SOURCE_DIR_25="swift-lmdb-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_25="swift-lmdb.tar.gz"
+
+SOURCE_URI_26="https://github.com/swiftlang/swift-docc-render-artifact/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_26="024bb04690a49654b9bf901c42eb406d1ff255add45cc2655e31819eea841b4a"
+SOURCE_DIR_26="swift-docc-render-artifact-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_26="swift-docc-render-artifact.tar.gz"
+
+SOURCE_URI_27="https://github.com/swiftlang/swift-docc-symbolkit/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_27="0d478cd7ba78e28175e93d1cf195c876fd97ae816f99d6981a398577be723a41"
+SOURCE_DIR_27="swift-docc-symbolkit-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_27="swift-docc-symbolkit.tar.gz"
+
+SOURCE_URI_28="https://github.com/swiftlang/swift-llvm-bindings/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_28="4ab60e9da07be38dd307a9b5ce06090aa1c0d86557bbf59887ee9ae4bd8daa42"
+SOURCE_DIR_28="swift-llvm-bindings-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_28="swift-llvm-bindings.tar.gz"
+
+SOURCE_URI_29="https://github.com/apple/swift-nio/archive/refs/tags/$SWIFT_NIO_VERSION.zip"
+CHECKSUM_SHA256_29="6a5afb9e2a8825fe8e2f358120a1da8b32fef177d980cc855e566ea2dca6ef7e"
+SOURCE_DIR_29="swift-nio-$SWIFT_NIO_VERSION"
+SOURCE_FILENAME_29="swift-nio.zip"
+
+SOURCE_URI_30="https://github.com/apple/swift-nio-ssl/archive/refs/tags/$SWIFT_NIO_SSL_VERSION.zip"
+CHECKSUM_SHA256_30="0146b6c5d4055ce9e8f568736df5d2712f9a8000a6b88e1eca9eaaa1fb599a29"
+SOURCE_DIR_30="swift-nio-ssl-$SWIFT_NIO_SSL_VERSION"
+SOURCE_FILENAME_30="swift-nio-ssl.zip"
+
+SOURCE_URI_31="https://github.com/swiftlang/swift-format/archive/refs/tags/$SWIFT_FORMAT_VERSION.tar.gz"
+CHECKSUM_SHA256_31="0d6e4a87975de7a294504dcdfae2432b419201414c3e1ec4b878623eab20e490"
+SOURCE_DIR_31="swift-format-$SWIFT_FORMAT_VERSION"
+SOURCE_FILENAME_31="swift-format.tar.gz"
+
+SOURCE_URI_32="https://github.com/swiftlang/swift-experimental-string-processing/archive/swift-$SWIFTTAG-RELEASE.tar.gz"
+CHECKSUM_SHA256_32="83714d2178d2a02de35e75dbe11ff2443695a65aaf1136e5a7b9f152716e75a6"
+SOURCE_DIR_32="swift-experimental-string-processing-swift-$SWIFTTAG-RELEASE"
+SOURCE_FILENAME_32="swift-experimental-string-processing.tar.gz"
 
 #PATCHES="swift_lang-$portVersion.patchset"
 #PATCHES_2="swift_clang-$portVersion.patchset"
@@ -112,22 +264,54 @@ BUILD_PREREQUIRES="
 	cmd:sed
 	cmd:swig
 	cmd:which
+	cmd:python3
 	"
 
 BUILD()
 {
 	cd ..
 
-	mkdir -p swift swift-corelibs-foundation clang llvm cmark compiler-rt
+	mkdir -p swift swift-corelibs-libdispatch swift-corelibs-foundation swift-integration-tests swift-corelibs-xctest \
+	         swiftpm llbuild cmark swift-xcode-playground-support sourcekit-lsp indexstore-db llvm-project \
+	         swift-tools-support-core swift-argument-parser swift-driver swift-syntax yams swift-crypto swift-atomics \
+	         swift-stress-tester swift-collections swift-numerics swift-system swift-docc swift-lmdb \
+	         swift-docc-render-artifact swift-docc-symbolkit swift-llvm-bindings swift-nio swift-nio-ssl swift-format \
+	         swift-experimental-string-processing
+	mkdir -p clang compiler-rt
 
 	# Copy all the source files
-	cp -rd $sourceDir/* swift
-	cp -rd $sourceDir2/* swift-corelibs-foundation
-	
-#	cp -rd $sourceDir2/* clang
-#	cp -rd $sourceDir3/* llvm
-#	cp -rd $sourceDir4/* cmark
-#	cp -rd $sourceDir5/* compiler-rt
+	cp -rd $sourceDir/*   swift
+	cp -rd $sourceDir2/*  swift-corelibs-libdispatch
+	cp -rd $sourceDir3/*  swift-corelibs-foundation
+	cp -rd $sourceDir4/*  swift-integration-tests
+	cp -rd $sourceDir5/*  swift-corelibs-xctest
+	cp -rd $sourceDir6/*  swiftpm
+	cp -rd $sourceDir7/*  llbuild
+	cp -rd $sourceDir8/*  cmark
+	cp -rd $sourceDir9/*  swift-xcode-playground-support
+	cp -rd $sourceDir10/* sourcekit-lsp
+	cp -rd $sourceDir11/* indexstore-db
+	cp -rd $sourceDir12/* llvm-project
+	cp -rd $sourceDir13/* swift-tools-support-core
+	cp -rd $sourceDir14/* swift-argument-parser
+	cp -rd $sourceDir15/* swift-driver
+	cp -rd $sourceDir16/* swift-syntax
+	cp -rd $sourceDir17/* yams
+	cp -rd $sourceDir18/* swift-crypto
+	cp -rd $sourceDir19/* swift-atomics
+	cp -rd $sourceDir20/* swift-stress-tester
+	cp -rd $sourceDir21/* swift-collections
+	cp -rd $sourceDir22/* swift-numerics
+	cp -rd $sourceDir23/* swift-system
+	cp -rd $sourceDir24/* swift-docc
+	cp -rd $sourceDir25/* swift-lmdb
+	cp -rd $sourceDir26/* swift-docc-render-artifact
+	cp -rd $sourceDir27/* swift-docc-symbolkit
+	cp -rd $sourceDir28/* swift-llvm-bindings
+	cp -rd $sourceDir29/* swift-nio
+	cp -rd $sourceDir30/* swift-nio-ssl
+	cp -rd $sourceDir31/* swift-format
+	cp -rd $sourceDir31/* swift-experimental-string-processing
 
 	# Fix permisssions for build-script.
 	chmod +x ./swift/utils/build-script ./swift/utils/build-script-impl
